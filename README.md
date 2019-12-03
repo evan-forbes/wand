@@ -27,7 +27,7 @@ $ go run main.go FirstCommand
 ```
 Any additional arguments or flags are stored in the wand.Context, and accessable by using the methods Args() and Flags(), both of witch (ha!) return a `map[string]string`. If you decide to use the wand.DefaultContext, then anything following the flag or argument is stored as the value, with the argument or flag stored as the key. ie.
 ```
-go run main.go command example/path/to/thing -shortFlag --longFlag=Thing
+$ go run main.go command example/path/to/thing -shortFlag --longFlag=Thing
 ```
 would result in
 ```golang
