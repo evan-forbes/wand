@@ -1,6 +1,6 @@
 # wand
 
-THE simplest, most "anti-framework" command line interface making tool for go. Wand iterates through some slice of strings, and if one of those strings is assigned to a spell (a sub command), then it will run that spell's Cast method.
+THE simplest, most "anti-framework" command line interface making tool for go. wand.Run iterates through some slice of strings, and if one of those strings is assigned to a spell (a sub command), then it will run that spell's Cast method.
 
 ## Usage
 
