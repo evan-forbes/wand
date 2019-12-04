@@ -48,14 +48,14 @@ func parseFlag(flag string) (string, string) {
 		return strings.Trim(flag, "-"), ""
 	}
 	s := strings.Split(flag, "=")
-	return s[0], s[1]
+	return strings.Trim(s[0], "-"), s[1]
 }
 
 // ParseArgs fullfills the wand.Context interface, along with
 // sorting and cleaning up the arguments passed to the called binary
 // os.Args
 func (ctx *DefaultContext) ParseArgs(inputs []string) {
-	if len(inputs) < 2 {
+	if len(inputs) < 1 {
 		fmt.Println("no commands given")
 		return
 	}

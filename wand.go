@@ -8,7 +8,7 @@ type Spell interface {
 	Cast(Context)
 }
 
-// RunMany searches for and runs the first command in the arguments
+// Run searches for and runs the first command in the arguments
 // provided at runtime
 func Run(ctx Context, spells map[string]Spell, args []string) {
 	ctx.ParseArgs(args)
