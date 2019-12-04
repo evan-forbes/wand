@@ -29,7 +29,7 @@ func main() {
 $ go run main.go PrintCommand
 // Hello, friend!
 ```
-Any additional arguments or flags are stored in the wand.Context, and accessible to your Cast method by using the methods ctx.Args() and ctx.Flags(), both of witch (ha!) return a `map[string]string`. If you decide to use the wand.DefaultContext, then anything following the flag or argument is stored as the value, with the argument or flag stored as the key. ie.
+Any additional arguments or flags are stored in the wand.Context, and accessible to your Cast method by using the methods `ctx.Args()` and `ctx.Flags()`, both of witch (ha!) return a `map[string]string`. If you decide to use the wand.DefaultContext, then anything following the flag or argument is stored as the value, with the argument or flag stored as the key. ie.
 ```
 $ go run main.go command example/path/to/thing -shortFlag --longFlag=Thing
 ```
@@ -62,9 +62,9 @@ func (mc *MyCommand) Cast(ctx wand.Context) {
 }
 ```
 
-If that parsing mechanism doesn't work for you, wand.Context is an interface, and I'd love to put another in the library. **(you should forreal make another one and submit a PR, I WILL ACCEPT IT AND WE CAN BE INTERNET FRIENDS)**
+If that parsing mechanism doesn't work for you, `wand.Context` is an interface, and I'd love to put another in the library. **(you should forreal make another one and submit a PR, I WILL ACCEPT IT AND WE CAN BE *super cool* INTERNET FRIENDS)**
 
-There's still a decent amount of work that needs to be done for anyone to actually want to use this other than myself, and I would adore any contributions or ideas, in any form, including submitting an issue.
+There's still a decent amount of work that needs to be done for anyone to actually want to use this other than myself, and I would adore any contributions or ideas, in any form, including submitting an issue. Sooner or later, I'll try and add bash like auto complete of commands.
 
 Made with witchly love -
     Evan
