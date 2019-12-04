@@ -29,7 +29,7 @@ func main() {
 $ go run main.go PrintCommand
 // Hello, friend!
 ```
-Any additional arguments or flags are stored in the wand.Context, and accessible by using the methods ctx.Args() and ctx.Flags(), both of witch (ha!) return a `map[string]string`. If you decide to use the wand.DefaultContext, then anything following the flag or argument is stored as the value, with the argument or flag stored as the key. ie.
+Any additional arguments or flags are stored in the wand.Context, and accessible to your Cast method by using the methods ctx.Args() and ctx.Flags(), both of witch (ha!) return a `map[string]string`. If you decide to use the wand.DefaultContext, then anything following the flag or argument is stored as the value, with the argument or flag stored as the key. ie.
 ```
 $ go run main.go command example/path/to/thing -shortFlag --longFlag=Thing
 ```
