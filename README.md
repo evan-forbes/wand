@@ -46,6 +46,22 @@ args == map[string]string{
     "command": "example/path/to/thing",
 }
 ```
+Checking for flags or other data is as easy as
+```golang
+func (mc *MyCommand) Cast(ctx wand.Context) {
+    flags := ctx.Flags()
+    
+    _, hasFlag := flags["flag"]
+    _, hasOtherFlag := flags["otherFlag"]
+    switch {
+    case hasFlag:
+        // do something special
+    case hasOtherFlag:
+        // do something extra special
+    }
+}
+```
+
 If that parsing mechanism doesn't work for you, wand.Context is an interface, and I'd love to put another in the library. **(you should forreal make another one and submit a PR, I WILL ACCEPT IT AND WE CAN BE INTERNET FRIENDS)**
 
 There's still a decent amount of work that needs to be done for anyone to actually want to use this other than myself, and I would adore any contributions or ideas, in any form, including submitting an issue.
