@@ -1,6 +1,6 @@
 # wand
 
-THE simplest, most "anti-framework" command line interface making tool for go. wand.Run iterates through some slice of strings, and if one of those strings is assigned to a spell (a sub command), then it will run that spell's Cast method. That's it!
+The simplest, most "anti-framework", least amount of code, command line interface making tool for go. `wand.Run` iterates through some slice of `string`, and if one of those strings is assigned to a spell (a sub command), then it will run that spell's `Cast` method. That's it!
 
 Should you use this for a big gnarly app? No, probably not. Just want to quickly call a few different functions without making multiple binaries or using a larger more cumbersome framework? Yes, that's a pretty solid use case, or that's at least what I use it for.
 
@@ -29,7 +29,7 @@ func main() {
 $ go run main.go PrintCommand
 // Hello, friend!
 ```
-Any additional arguments or flags are stored in the wand.Context, and accessible to your Cast method by using the methods `ctx.Args()` and `ctx.Flags()`, both of witch (ha!) return a `map[string]string`. If you decide to use the wand.DefaultContext, then anything following the flag or argument is stored as the value, with the argument or flag stored as the key. ie.
+Any additional arguments or flags are stored in the `wand.Context`, and accessible to your `Cast` method by using the methods `ctx.Args()` and `ctx.Flags()`, both of witch (ha!) return a `map[string]string`. If you decide to use the `wand.DefaultContext`, then anything following the flag or argument is stored as the value, with the argument or flag stored as the key. ie.
 ```
 $ go run main.go command example/path/to/thing -shortFlag --longFlag=Thing
 ```
